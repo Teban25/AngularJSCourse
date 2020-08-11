@@ -1,0 +1,46 @@
+Actualización del Módulo HTTP version de AngularJS 1.6 o superior
+Si desean actualizar la librería de AngularJS del proyecto, pueden bajarla del sitio oficial y reemplazar el archivo que se adjunta en las siguientes clases.  Adicionalmente tendremos que cambiar lo siguiente:
+
+
+
+Si usamos la version 1.6 >, en lugar de esto:
+
+$http.get('data.json').success(function(data)){
+...
+..
+});
+Es esto:
+
+$http.get('data.json')
+.then(function(respuesta) {
+    // Todo BIEN, la información viene en la respuesta.
+})
+Básicamente eso es todo el cambio para poder seguir trabajando con la version más actualizada de Angular
+
+
+
+Notas:
+Anteriormente se hacía así:
+
+$http.get('data.json')
+.success(function(data) {
+ 
+})
+.error(function(data, status) {
+ 
+})
+.finally(function() {
+ 
+});
+En la version 1.6 >, la estructura completa del HTTP es:
+
+$http.get('data.json')
+.then(function(response) {
+    // Todo BIEN, la información viene en la respuesta.
+})
+.catch(function(response) {
+    // Problemas con la peticion
+})
+.finally(function() {
+    // Al terminar el THEN o CATCH
+});

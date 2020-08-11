@@ -1,0 +1,6 @@
+https://animate.style/ -- para estilos css de animación
+
+https://docs.angularjs.org/api -- documentación oficial de AngularJs
+
+
+https://adminlte.io/ -- free bootstrap template
